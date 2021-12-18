@@ -1,0 +1,24 @@
+### /api/login
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+  "email": "admin@admin.com",
+  "password": "password"
+}
+
+### get order list
+GET http://localhost:8000/api/orders
+Content-Type: application/json
+
+### get an order
+GET http://localhost:8000/api/orders/1
+Content-Type: application/json
+
+### export orders to csv file
+GET http://localhost:8000/api/export
+Content-Type: text/csv
+
+### export orders to chart data
+GET http://localhost:8000/api/chart
+Content-Type: application/json

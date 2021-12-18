@@ -1,0 +1,130 @@
+
+
+### /api/register: wrong password, confirm
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+  "first_name": "a",
+  "last_name": "b",
+  "email": "a@b.com",
+  "password": 1,
+  "password_confirm": 2
+}
+
+
+### /api/register: correct
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+  "first_name": "a",
+  "last_name": "a",
+  "email": "a@a.com",
+  "password": 1,
+  "password_confirm": 1
+}
+
+### /api/login
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+  "email": "admin@admin.com",
+  "password": "password"
+}
+
+
+### /api/user
+GET http://localhost:8000/api/user
+Content-Type: application/json
+
+
+### /api/logout
+POST http://localhost:8000/api/logout
+Content-Type: application/json
+
+
+### /api/permissions
+GET http://localhost:8000/api/permissions
+Content-Type: application/json
+
+### /api/roles: GET LISTS
+GET http://localhost:8000/api/roles
+Content-Type: application/json
+
+### /api/roles:  CREATE NEW
+POST http://localhost:8000/api/roles
+Content-Type: application/json
+
+{
+  "name": "new role",
+  "permissions": [1, 2]
+}
+
+### /api/roles: GET BY ID
+GET http://localhost:8000/api/roles/1
+Content-Type: application/json
+
+### /api/roles: PUT
+PUT http://localhost:8000/api/roles/7
+Content-Type: application/json
+
+{
+  "name": "new role",
+  "permissions": [1, 2, 3]
+}
+
+### /api/roles: DELETE
+DELETE http://localhost:8000/api/roles/7
+Content-Type: application/json
+
+### /api/users GET LIST
+GET http://localhost:8000/api/users
+Content-Type: application/json
+
+### /api/users GET ONE
+GET http://localhost:8000/api/users/1
+Content-Type: application/json
+
+### /api/users: CREATE USER
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+  "first_name": "a",
+  "last_name": "b",
+  "email": "a@c.com",
+  "role_id": 1
+}
+
+### /api/users: UPDATE USER
+PUT http://localhost:8000/api/users/5
+Content-Type: application/json
+
+{
+  "first_name": "aaaa",
+  "last_name": "bbbb"
+}
+
+### /api/users: DELETE USER
+DELETE http://localhost:8000/api/users/5
+Content-Type: application/json
+
+### /api/users/info:
+PUT http://localhost:8000/api/users/info
+Content-Type: application/json
+
+{
+  "first_name": "Admin",
+  "last_name": "Admin"
+}
+
+### /api/users/password:
+PUT http://localhost:8000/api/users/password
+Content-Type: application/json
+
+{
+  "password": "password",
+  "password_confirm": "password"
+}
